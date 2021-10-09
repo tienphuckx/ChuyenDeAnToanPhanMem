@@ -15,13 +15,17 @@ use App\Http\Controllers\SinhVienController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome'); //oke
 });
 
-Route::get('/sinh-vien', 'SinhVienController@index');
-Route::get('/sinh-vien/them', 'SinhVienController@insert');
-Route::post('/sinh-vien/luu', 'SinhVienController@save_with_validate')->name('sinhvien.luu');
-// Route::post('welcome/login', 'WelcomeController@login')->name('welcome.login');
+//SINH VIEN
+Route::get('sinh-vien', [SinhVienController::class, 'index']);
+Route::get('sinh-vien/them', 'SinhVienController@insert');
+Route::post('sinh-vien/luu', [SinhVienController::class, 'save']);
+Route::get('sinh-vien/{id}/edit', 'SinhVienController@edit');
+Route::put('sinh-vien/{id}/update', 'SinhVienController@update');
+Route::get('sinh-vien/{id}/delete', 'SinhVienController@delete');
+
 
 Route::get('/dang-nhap', function () {
     return view('pages.login');

@@ -16,7 +16,7 @@
     <link rel="icon" href="/docs/5.1/assets/img/favicons/favicon.ico">
     <meta name="theme-color" content="#7952b3">
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/album/">
-    
+
 </head>
 <body>
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
@@ -60,18 +60,18 @@
       </svg>
 
     <div class="container-fluid p-0">
-        {{-- @include('blocks.header') --}}
-    </div>
-   
-    <div class="container">
-        {{-- @yield('content') --}}
-    </div>
-   
-    <div class="container-fluid p-0">
-        {{-- @include('blocks.footer') --}}
+        @include('blocks.header')
     </div>
 
-    
+    <div class="container">
+        @yield('content')
+    </div>
+
+    <div class="container-fluid p-0">
+        @include('blocks.footer')
+    </div>
+
+
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
